@@ -19,6 +19,40 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 安装如下：
 
 	rpm -Uvh namedmanager-bind-1.5.1-1.el6.noarch.rpm
+	[root@localhost noarch]# rpm -ihv namedmanager-www-1.5.1-1.el6.noarch.rpm 
+	Preparing...                ########################################### [100%]
+	   1:namedmanager-www       ########################################### [100%]
+	   Reloading httpd...
+	   Reloading httpd: 
+	   Run cd /usr/share/namedmanager/resources/; ./autoinstall.pl to install the SQL database.
+
+![Alt text](img/importsql.png "导入sql语名")
+    
+安装数据库
+
+	yum -y install mysql-server
+
+启动Mysql
+
+	service mysqld start
+
+设置mysql密码
+
+	mysqladmin -u root password '123456
+
+namedmanager配置文件如下：
+
+	/etc/namedmanager/config.php
+
+	<?php
+	$config["db_host"] = "localhost";                       // hostname of the MySQL server
+	$config["db_name"] = "myapp";                           // database name
+	$config["db_user"] = "root";                            // MySQL user
+	$config["db_pass"] = "";                                // MySQL password (if any)
+	$config["AUTH_METHOD"] = "sql";
+	?>
+
+更改密码为mysql的密码	
 
 ####参考文档
 
