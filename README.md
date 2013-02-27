@@ -10,4 +10,4 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 
 ![Alt text](img/first.png "前台管理截图")
 
-####3.安装和使用      
+####3.安装和使用
