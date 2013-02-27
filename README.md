@@ -60,6 +60,16 @@ namedmanager配置文件如下：
 	$config["AUTH_METHOD"] = "sql";
 	?>
 
+导入完成后可web管理:
+
+	https://xx.xx.xx.xx/namedmanager/index.php
+
+	默认用户名和密码分别为: setup  和setup123
+
+接着设置API key 备用：
+
+![Alt text](img/api.png "api设置")
+
 
 ####参考文档
 
