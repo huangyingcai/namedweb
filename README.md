@@ -20,4 +20,8 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 
 	rpm -Uvh namedmanager-bind-1.5.1-1.el6.noarch.rpm
 
+####参考文档
 
+官方安装手册
+
+<https://projects.jethrocarr.com/p/oss-namedmanager/page/Installation-RPM/>
