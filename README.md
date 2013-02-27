@@ -33,6 +33,8 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 输入mysql密码完成Sql 导入和配置文件生成。截图如下：
 
 ![Alt text](img/importsql.png "导入sql语名")
+
+####数据库部分参考:（已经安装并熟知的可以跳过）
     
 安装数据库
 
