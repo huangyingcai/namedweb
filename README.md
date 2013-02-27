@@ -97,7 +97,8 @@ namedmanager配置文件如下：
 	
 	include "/etc/named.namedmanager.conf";
 
-然后重启bind
+重启bind
+
 	service named restart
 
 截图:
