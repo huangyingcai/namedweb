@@ -14,7 +14,8 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 	**本文是针对centos 6 系统为范本**
 
 下载包并安装。rpm包在rpm目录
+安装如下：
 
-`rpm -Uvh namedmanager-bind-1.5.1-1.el6.noarch.rpm`
+	rpm -Uvh namedmanager-bind-1.5.1-1.el6.noarch.rpm
 
 
