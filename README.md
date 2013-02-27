@@ -16,9 +16,11 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 
 下载包并安装。rpm包在rpm目录
 
+#####安装namedmanager-www 管理界面
+
 安装如下：
 
-	rpm -Uvh namedmanager-bind-1.5.1-1.el6.noarch.rpm
+	rpm -Uvh namedmanager-www-1.5.1-1.el6.noarch.rpm
 	[root@localhost noarch]# rpm -ihv namedmanager-www-1.5.1-1.el6.noarch.rpm 
 	Preparing...                ########################################### [100%]
 	   1:namedmanager-www       ########################################### [100%]
@@ -70,6 +72,37 @@ namedmanager配置文件如下：
 
 ![Alt text](img/api.png "api设置")
 
+
+#####安装named-bind
+
+**安装bind**
+	
+	yum -y install bind
+
+**安装named-bind**
+
+	[root@localhost noarch]# rpm -ivh namedmanager-bind-1.5.1-1.el6.noarch.rpm 
+	Preparing...                ########################################### [100%]
+	   1:namedmanager-bind      ########################################### [100%]
+
+	BIND/NAMED CONFIGURATION
+
+	NamedManager BIND components have been installed, you will need to install
+	and configure bind/named to use the configuration file by adding the
+	following to /etc/named.conf:
+
+**配置bind**
+
+在/etc/named.conf中添加如下：
+	
+	include "/etc/named.namedmanager.conf";
+
+然后重启bind
+	service named restart
+
+截图:
+
+![Alt text](img/named_bind.png "named-bind安装")	
 
 ####参考文档
 
