@@ -26,6 +26,12 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 	   Reloading httpd: 
 	   Run cd /usr/share/namedmanager/resources/; ./autoinstall.pl to install the SQL database.
 
+	cd /usr/share/namedmanager/resources/
+
+	./autoinstall.pl
+
+输入mysql密码完成Sql 导入和配置文件生成。截图如下：
+
 ![Alt text](img/importsql.png "导入sql语名")
     
 安装数据库
@@ -46,13 +52,12 @@ namedmanager配置文件如下：
 
 	<?php
 	$config["db_host"] = "localhost";                       // hostname of the MySQL server
-	$config["db_name"] = "myapp";                           // database name
-	$config["db_user"] = "root";                            // MySQL user
-	$config["db_pass"] = "";                                // MySQL password (if any)
+	$config["db_name"] = "namedmanager";                            // database name
+	$config["db_user"] = "namedmanager";                            // MySQL user
+	$config["db_pass"] = "iv262niram6";                             // MySQL password (if any)
 	$config["AUTH_METHOD"] = "sql";
 	?>
 
-更改密码为mysql的密码	
 
 ####参考文档
 
