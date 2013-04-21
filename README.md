@@ -130,4 +130,5 @@ NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整
 官方安装手册
 
 <https://projects.jethrocarr.com/p/oss-namedmanager/page/Installation-RPM/>
+
 <http:/www.selfcai.com.cn>
