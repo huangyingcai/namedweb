@@ -1,87 +1,169 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Namedweb : bindweb管理界面" />
 
-  <title>Namedweb</title>
-  <meta name="description" content="bindweb管理界面">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Namedweb</title>
+  </head>
 
-</head>
+  <body>
 
-<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/huangyingcai/namedweb">View on GitHub</a>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Namedweb</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">bindweb管理界面</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/huangyingcai/namedweb/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/huangyingcai/namedweb/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/huangyingcai/namedweb" class="code">View Namedweb on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h3>Welcome to GitHub Pages.</h3>
+          <h1 id="project_title">Namedweb</h1>
+          <h2 id="project_tagline">bindweb管理界面</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/huangyingcai/namedweb/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/huangyingcai/namedweb/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>namedmanager</p>
+
+<h3>1.简介</h3>
+
+<p>NamedManager 是一个基于 Web 的 DNS 管理系统，可用来添加、调整和删除 DNS 的 zones/records 数据，支持 Bind 作为后端的 DNS 服务，支持 IPv4 和 IPv6。</p>
+
+<h3>2.用途</h3>
+
+<p>最简单直接的用途是在管理DNS记录上。添加删除更方便</p>
+
+<p><img src="img/first.png" alt="Alt text" title="前台管理截图"></p>
+
+<h4>3.安装和使用</h4>
+
+<p><strong>本文是针对centos 6 系统为范本</strong></p>
+
+<p>下载包并安装。rpm包在rpm目录</p>
+
+<h5>安装namedmanager-www 管理界面</h5>
+
+<p><strong>安装如下：</strong></p>
+
+<pre><code>rpm -Uvh namedmanager-www-1.5.1-1.el6.noarch.rpm
+[root@localhost noarch]# rpm -ihv namedmanager-www-1.5.1-1.el6.noarch.rpm 
+Preparing...                ########################################### [100%]
+   1:namedmanager-www       ########################################### [100%]
+   Reloading httpd...
+   Reloading httpd: 
+   Run cd /usr/share/namedmanager/resources/; ./autoinstall.pl to install the SQL database.
+
+cd /usr/share/namedmanager/resources/
+
+./autoinstall.pl
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p><strong>输入mysql密码完成Sql 导入和配置文件生成。截图如下：</strong></p>
 
-<h3>Designer Templates</h3>
+<p><img src="img/importsql.png" alt="Alt text" title="导入sql语名"></p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h4>数据库部分参考:（已经安装并熟知的可以跳过）</h4>
 
-<h3>Rather Drive Stick?</h3>
+<p><strong>安装数据库</strong></p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<pre><code>yum -y install mysql-server
+</code></pre>
 
-<h3>Authors and Contributors</h3>
+<p><strong>启动Mysql</strong></p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<pre><code>service mysqld start
+</code></pre>
 
-<h3>Support or Contact</h3>
+<p><strong>设置mysql密码</strong></p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </article>
-      </div>
+<pre><code>mysqladmin -u root password '123456
+</code></pre>
+
+<p><strong>namedmanager配置文件如下：</strong></p>
+
+<pre><code>/etc/namedmanager/config.php
+
+&lt;?php
+$config["db_host"] = "localhost";                       // hostname of the MySQL server
+$config["db_name"] = "namedmanager";                            // database name
+$config["db_user"] = "namedmanager";                            // MySQL user
+$config["db_pass"] = "iv262niram6";                             // MySQL password (if any)
+$config["AUTH_METHOD"] = "sql";
+?&gt;
+</code></pre>
+
+<p><strong>导入完成后可web管理:</strong></p>
+
+<pre><code>https://xx.xx.xx.xx/namedmanager/index.php
+
+默认用户名和密码分别为: setup  和setup123
+</code></pre>
+
+<p><strong>接着设置API key 备用：</strong></p>
+
+<p><img src="img/api.png" alt="Alt text" title="api设置"></p>
+
+<h5>安装named-bind</h5>
+
+<p><strong>安装bind</strong></p>
+
+<pre><code>yum -y install bind
+</code></pre>
+
+<p><strong>安装named-bind</strong></p>
+
+<pre><code>[root@localhost noarch]# rpm -ivh namedmanager-bind-1.5.1-1.el6.noarch.rpm 
+Preparing...                ########################################### [100%]
+   1:namedmanager-bind      ########################################### [100%]
+
+BIND/NAMED CONFIGURATION
+
+NamedManager BIND components have been installed, you will need to install
+and configure bind/named to use the configuration file by adding the
+following to /etc/named.conf:
+</code></pre>
+
+<p><strong>配置bind</strong></p>
+
+<p>在/etc/named.conf中添加如下：</p>
+
+<pre><code>include "/etc/named.namedmanager.conf";
+</code></pre>
+
+<p><strong>重启bind</strong></p>
+
+<pre><code>service named restart
+</code></pre>
+
+<p>截图:</p>
+
+<p><img src="img/named_bind.png" alt="Alt text" title="named-bind安装"></p>
+
+<h4>参考文档</h4>
+
+<p>官方安装手册</p>
+
+<p><a href="https://projects.jethrocarr.com/p/oss-namedmanager/page/Installation-RPM/">https://projects.jethrocarr.com/p/oss-namedmanager/page/Installation-RPM/</a></p>
+      </section>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/huangyingcai" class="avatar"><img src="https://secure.gravatar.com/avatar/95c9209905580fb6b7ee3b0e48335504?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/huangyingcai">huangyingcai</a> maintains <a href="https://github.com/huangyingcai/namedweb">Namedweb</a></p>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Namedweb maintained by <a href="https://github.com/huangyingcai">huangyingcai</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/huangyingcai/namedweb/tarball/master" class="tar">tar</a><a href="https://github.com/huangyingcai/namedweb/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
+    
 
-  
-</body>
+  </body>
 </html>
